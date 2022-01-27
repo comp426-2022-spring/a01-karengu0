@@ -24,7 +24,7 @@ fs.readFile('./www/index.html', 'utf8', (err, data) => {
         return
         process.exit(1)
     }
-    // console.log(data)
+    console.log(data)
     const server = http.createServer((req, res) => {
     res.statusCode = 200
     res.setHeader('ContentType', 'text/html')
