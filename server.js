@@ -36,7 +36,6 @@ const server = http.createServer((req, res) => {
             return
             process.exit(1)
         }
-        console.log("File Read")
         //console.log(data)
         res.end(data)
     })
@@ -46,7 +45,6 @@ const server = http.createServer((req, res) => {
 // Put the exact message `Server listening on port ${port}` on the console log. 
 
 server.listen(port, () => {
-    server.listen(port)
     console.log(`Server listening on port ${port}`)
 })
 // That's it! You're all done!
