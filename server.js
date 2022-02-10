@@ -1,4 +1,4 @@
-// Require http module
+// Require http module ("dependencies")
 const http = require('http')
 // Require fs module
 const fs = require('fs')
@@ -8,17 +8,15 @@ const minimist = require('minimist')
 var argument = minimist(process.argv.slice(2))
 
 // Define allowed argument name 'port'.
-var portArgument = 'port'
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
-const port = argument[portArgument] || 3000
+const port = argument['port'] || 3000
 // Use the fs module to create an arrow function using `fs.readFile`.
 // Use the documentation for the Node.js `fs` module. 
 // The function must read a file located at `./www/index.html` and do some stuff with it.
 // The stuff that should be inside this function is all below.
 // If there is an error, put it on the console error, return, and exit with error code 1. 
 // Do not be nice about exiting.
-
 
 // Define a const `server` as an arrow function using http.createServer. 
 // Use the documentation for the node.js http module. 
@@ -33,7 +31,7 @@ const server = http.createServer((req, res) => { //request and response
     //res.end(data)
     fs.readFile('./www/index.html', 'utf8', (err, data) => {
         if (err) {
-            console.error(err)
+            console.error("there was an error")
             return
         }
         //console.log(data)
