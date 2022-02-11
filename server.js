@@ -31,18 +31,19 @@ const server = http.createServer((req, res) => { //request and response
     //res.end(data)
     fs.readFile('./www/index.html', 'utf8', (err, data) => {
         if (err) {
-            console.error("there was an error")
+            console.error("There was an error")
             return
         }
         //console.log(data)
         res.end(data)
+        server.listen(port, () => {
+            console.log(`Server listening on port ${port}`)
+        })
     })
 })
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
 
-server.listen(port, () => {
-    console.log(`Server listening on port ${port}`)
-})
+
 // That's it! You're all done!
